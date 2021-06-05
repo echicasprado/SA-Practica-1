@@ -1,12 +1,9 @@
 pipeline{
     agent any
     stages{
-        stage('stop'){
+        stage('Build'){
             steps{
-                script{
-                    sh
-                    '''java --version'''
-                }
+                sh 'java --version'
             }
         }
     }
