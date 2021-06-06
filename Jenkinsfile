@@ -1,9 +1,12 @@
 pipeline{
     agent any
+
+    tools {nodejs "node"}
+    
     stages{
         stage('Build'){
             steps{
-                sh 'npm --version'
+                sh 'npm config ls'
             }
         }
         stage('Test'){
