@@ -7,6 +7,7 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'npm config ls'
+                sh 'npm install npm@latest -g'
                 sh 'node --version'
                 sh 'npm --version'
             }
