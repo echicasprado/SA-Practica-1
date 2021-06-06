@@ -7,16 +7,18 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'npm config ls'
+                sh 'node --version'
+                sh 'npm --version'
             }
         }
         stage('Test'){
             steps{
-                sh 'node --version'
+                sh 'npm test'
             }
         }
         stage('Deploy'){
             steps{
-                sh 'java --version'
+                sh 'npm init'
             }
         }
     }
