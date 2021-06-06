@@ -1,25 +1,29 @@
 pipeline{
-    agent any
+    agent{
+        docker{
+            image 'node'
+            args '-p 3000:3000'
+        }
+    }
 
-    tools {nodejs "node"}
+    // tools {nodejs "node"}
     
     stages{
         stage('Build'){
             steps{
-                sh 'npm config ls'
                 sh 'npm install'
             }
         }
-        stage('Test'){
-            steps{
-                sh 'node --version'
-                sh 'npm --version'
-            }
-        }
-        stage('Deploy'){
-            steps{
-                sh 'npm start'
-            }
-        }
+        // stage('Test'){
+        //     steps{
+        //         sh 'node --version'
+        //         sh 'npm --version'
+        //     }
+        // }
+        // stage('Deploy'){
+        //     steps{
+        //         sh 'npm start'
+        //     }
+        // }
     }
 }
