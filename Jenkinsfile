@@ -1,14 +1,13 @@
 pipeline{
     agent any
     stages{
-        stage('Build'){
+        stage('Install dependencies'){
             steps{
-                sh 'java --version'
+                sh 'npm --version'
             }
         }
         stage('Test'){
             steps{
-                sh 'npm start'
             }
         }
         stage('Deploy'){
