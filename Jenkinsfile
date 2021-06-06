@@ -6,24 +6,23 @@ pipeline{
         }
     }
 
-    // tools {nodejs "node"}
+    tools {nodejs "node"}
     
     stages{
         stage('Build'){
             steps{
-                sh 'npm install'
+                sh './sa-practica1/install.sh'
             }
         }
-        // stage('Test'){
-        //     steps{
-        //         sh 'node --version'
-        //         sh 'npm --version'
-        //     }
-        // }
-        // stage('Deploy'){
-        //     steps{
-        //         sh 'npm start'
-        //     }
-        // }
+        stage('Test'){
+            steps{
+                sh './sa-practica1/test.sh'
+            }
+        }
+        stage('Deploy'){
+            steps{
+                sh './sa-practica1/start.sh'
+            }
+        }
     }
 }
