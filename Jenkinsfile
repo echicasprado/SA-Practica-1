@@ -1,7 +1,7 @@
 pipeline{
     agent any
     stages{
-        stage('Install dependencies'){
+        stage('Build'){
             steps{
                 sh 'npm --version'
             }
