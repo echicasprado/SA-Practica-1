@@ -13,6 +13,7 @@ pipeline{
         }
         stage('Test'){
             steps{
+                sh 'cd sa-practica1'
                 sh 'npm test'
             }
         }
