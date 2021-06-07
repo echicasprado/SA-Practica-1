@@ -13,7 +13,7 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'Test'
-                sh 'npm test'
+                sh './sa-practica1/test.sh'
             }
         }
         stage('Deploy'){
