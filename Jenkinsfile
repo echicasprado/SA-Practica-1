@@ -7,19 +7,24 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                sh 'npm config ls'
-                sh 'chmod +x ./sa-practica1/install.sh'
-                sh './sa-practica1/install.sh'
+                nodejs('node'){
+                    sh 'npm --version'
+                    sh 'npm install'
+                }
             }
         }
         stage('Test'){
             steps{
-                sh './sa-practica1/test.sh'
+                nodejs('node'){
+                    sh 'npm test'
+                }
             }
         }
         stage('Deploy'){
             steps{
-                sh './sa-practica1/start.sh'
+                nodejs('node'){
+                    sh 'npm start'
+                }
             }
         }
     }
