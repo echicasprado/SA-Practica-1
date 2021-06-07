@@ -13,7 +13,7 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'Test'
-                sh './sa-practica1/test.sh'
+                sh 'sudo ./sa-practica1/test.sh'
             }
         }
         stage('Deploy'){
