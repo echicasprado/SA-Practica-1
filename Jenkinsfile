@@ -1,37 +1,29 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage('Build'){
-            steps{
-                dir "sa-practica1"
-                echo 'Build'
-                sh 'tree'
-                // nodejs('node'){
-                //     sh 'npm --version'
-                //     sh 'npm install'
-                // }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                nodejs('NodeJS'){
+                    sh 'npm --version'
+                    sh 'npm install'
+                    sh 'npm start &'
+                }
             }
         }
-        // stage('Test'){
-        //     steps{
-        //         echo 'Test'
-        //         dir("sa-practica1"){
-        //             nodejs('node')
-        //                 sh 'npm test'
-        //             }
-        //         }
-        //     }
-        // }
-        // stage('Deploy'){
-        //     steps{
-        //         echo 'Hola mundo'
-        //         dir("sa-practica1"){
-        //             nodejs('node')
-        //                 sh 'npm start'
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                nodejs('NodeJS'){
+                    sh 'npm test'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
