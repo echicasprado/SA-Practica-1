@@ -4,23 +4,32 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                nodejs('node'){
-                    sh 'npm --version'
-                    sh 'npm install'
+                dir('sa-practica1'){
+                    nodejs('node'){
+                        sh 'npm --version'
+                        sh 'npm install'
+                    }
                 }
             }
         }
         stage('Test'){
             steps{
                 echo 'Test'
-                nodejs('node'){
-                    sh 'sudo sa-practica1/start.sh'
+                dir('sa-practica1'){
+                    nodejs('node')
+                        sh 'npm test'
+                    }
                 }
             }
         }
         stage('Deploy'){
             steps{
                 echo 'Hola mundo'
+                dir('sa-practica1'){
+                    nodejs('node')
+                        sh 'npm start'
+                    }
+                }
             }
         }
     }
