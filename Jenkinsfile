@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                dir('sa-practica1'){
+                dir("sa-practica1"){
                     nodejs('node'){
                         sh 'npm --version'
                         sh 'npm install'
@@ -15,7 +15,7 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'Test'
-                dir('sa-practica1'){
+                dir("sa-practica1"){
                     nodejs('node')
                         sh 'npm test'
                     }
@@ -25,7 +25,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'Hola mundo'
-                dir('sa-practica1'){
+                dir("sa-practica1"){
                     nodejs('node')
                         sh 'npm start'
                     }
