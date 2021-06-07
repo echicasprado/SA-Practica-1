@@ -11,9 +11,7 @@ pipeline{
         }
         stage('Test'){
             steps{
-                nodejs('node'){
-                    sh 'node --version'
-                }
+                echo 'Test'
             }
         }
         stage('Deploy'){
