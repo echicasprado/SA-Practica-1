@@ -11,25 +11,25 @@ pipeline{
                 }
             }
         }
-        stage('Test'){
-            steps{
-                echo 'Test'
-                dir("sa-practica1"){
-                    nodejs('node')
-                        sh 'npm test'
-                    }
-                }
-            }
-        }
-        stage('Deploy'){
-            steps{
-                echo 'Hola mundo'
-                dir("sa-practica1"){
-                    nodejs('node')
-                        sh 'npm start'
-                    }
-                }
-            }
-        }
+        // stage('Test'){
+        //     steps{
+        //         echo 'Test'
+        //         dir("sa-practica1"){
+        //             nodejs('node')
+        //                 sh 'npm test'
+        //             }
+        //         }
+        //     }
+        // }
+        // stage('Deploy'){
+        //     steps{
+        //         echo 'Hola mundo'
+        //         dir("sa-practica1"){
+        //             nodejs('node')
+        //                 sh 'npm start'
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
