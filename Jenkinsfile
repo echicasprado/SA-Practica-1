@@ -14,7 +14,7 @@ pipeline{
             steps{
                 echo 'Test'
                 nodejs('node'){
-                    sh 'sudo sa-practica1/test.sh'
+                    sh 'sudo sa-practica1/start.sh'
                 }
             }
         }
