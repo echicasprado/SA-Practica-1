@@ -14,7 +14,7 @@ pipeline{
             steps{
                 echo 'Test'
                 nodejs('node'){
-                    sh 'npm test'
+                    sh 'sudo sa-practica1/test.sh'
                 }
             }
         }
