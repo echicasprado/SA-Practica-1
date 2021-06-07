@@ -7,6 +7,7 @@ pipeline {
                 echo 'Building..'
                 nodejs('node'){
                     sh 'npm --version'
+                    sh 'npm i -g mocha'
                     sh 'npm install'
                     sh 'npm start &'
                 }
