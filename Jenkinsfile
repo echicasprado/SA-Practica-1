@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                nodejs('NodeJS'){
+                nodejs('node'){
                     sh 'npm --version'
                     sh 'npm install'
                     sh 'npm start &'
@@ -15,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                nodejs('NodeJS'){
+                nodejs('node'){
                     sh 'npm test'
                 }
             }
