@@ -13,7 +13,9 @@ pipeline{
         stage('Test'){
             steps{
                 echo 'Test'
-                sh 'sudo ./sa-practica1/test.sh'
+                nodejs('node'){
+                    sh 'npm test'
+                }
             }
         }
         stage('Deploy'){
