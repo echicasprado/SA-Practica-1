@@ -5,10 +5,11 @@ pipeline{
         stage('Build'){
             steps{
                 dir "sa-practica1"
-                nodejs('node'){
-                    sh 'npm --version'
-                    sh 'npm install'
-                }
+                sh 'npm --version'
+                // nodejs('node'){
+                //     sh 'npm --version'
+                //     sh 'npm install'
+                // }
             }
         }
         // stage('Test'){
