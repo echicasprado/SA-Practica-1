@@ -5,7 +5,8 @@ pipeline{
         stage('Build'){
             steps{
                 dir "sa-practica1"
-                sh 'npm --version'
+                echo 'Build'
+                sh 'tree'
                 // nodejs('node'){
                 //     sh 'npm --version'
                 //     sh 'npm install'
