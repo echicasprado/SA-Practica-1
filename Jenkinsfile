@@ -4,11 +4,10 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-                dir("sa-practica1"){
-                    nodejs('node'){
-                        sh 'npm --version'
-                        sh 'npm install'
-                    }
+                dir "sa-practica1"
+                nodejs('node'){
+                    sh 'npm --version'
+                    sh 'npm install'
                 }
             }
         }
