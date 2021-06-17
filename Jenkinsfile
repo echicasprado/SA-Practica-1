@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo ansible-playbook ansible.yml
+                ansiblePlaybook installation: 'ansible', playbook: '${workspace}/ansible.yml'
             }
         }
     }
