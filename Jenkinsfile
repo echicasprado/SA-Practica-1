@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo ansible-playbook ansible.yml
             }
         }
     }
