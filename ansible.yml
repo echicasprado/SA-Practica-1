@@ -1,0 +1,7 @@
+- hosts: 18.117.228.165
+  become: true
+  tasks:
+  - name: instala vim
+    apt: name=vim state=present
+  - name: saluda
+    bash: echo Hola
